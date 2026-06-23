@@ -74,18 +74,6 @@ Las dependencias se instalan automáticamente en el primer run via `Pkg.instanti
 
 ---
 
-## Resultados principales
-
-| Métrica | OLS | BUDE | BUSDE |
-|---|---|---|---|
-| RMSE test (libre) | — | — | — |
-| Cobertura PI 90% (H=6) | — | ~30% | ~80% |
-| CRPS (H=6) | — | — | — |
-
-*(Los valores exactos dependen de la semilla y los datos; ejecutar `04_evaluation.jl` y `07_bude_vs_busde.jl` para reproducirlos.)*
-
----
-
 ## Dependencias principales
 
 `Lux` · `Zygote` · `Optimisers` · `DifferentialEquations` · `StochasticDiffEq` · `ComponentArrays` · `CairoMakie` · `NCDatasets`

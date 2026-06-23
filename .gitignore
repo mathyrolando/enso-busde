@@ -1,0 +1,19 @@
+# Datos descargados automáticamente por el pipeline
+data/ersstv5.nc
+
+# Salidas generadas (CSV, modelos entrenados, reportes)
+data/*.csv
+data/*.jld2
+data/*.json
+data/bude_posterior_report.txt
+
+# Dato crudo WWV: no se puede descargar automáticamente, se incluye
+!data/wwv_raw.txt
+
+# Solo el backup de figuras
+figures_backup/
+
+# Miscelánea
+.DS_Store
+Thumbs.db
+*.log

@@ -2,7 +2,7 @@
 
 Pronóstico estocástico de ENSO mediante una **Ecuación Diferencial Universal Bayesiana** (BUDE) extendida con un término de difusión dependiente del estado (BUSDE).
 
-Proyecto final — Licenciatura en Ciencias de Datos, UBA (2026).
+Proyecto final - Datos, Ecuaciones Diferenciales e Inteligencia Artificial
 
 ---
 
@@ -15,9 +15,9 @@ El [oscilador de recarga de Jin (1997)](https://doi.org/10.1175/1520-0442(1997)0
 
 Este proyecto aprende las correcciones no lineales al modelo lineal directamente de los datos, combinando tres capas de modelado:
 
-1. **OLS** — ajuste de los parámetros lineales del oscilador por mínimos cuadrados
-2. **BUDE** — UDE bayesiana: los parámetros lineales y las redes neuronales correctoras se optimizan conjuntamente mediante Bayes-by-Backprop (ELBO). La incertidumbre epistémica se propaga en el ensemble de predicciones.
-3. **BUSDE** — extiende la BUDE con un término de ruido heterocedástico ajustado por MLE, que representa el forzamiento atmosférico irreducible (ráfagas de viento del oeste).
+1. **OLS**: ajuste de los parámetros lineales del oscilador por mínimos cuadrados
+2. **BUDE**: UDE bayesiana: los parámetros lineales y las redes neuronales correctoras se optimizan conjuntamente mediante Bayes-by-Backprop (ELBO). La incertidumbre epistémica se propaga en el ensemble de predicciones.
+3. **BUSDE**: extiende la BUDE con un término de ruido heterocedástico ajustado por MLE, que representa el forzamiento atmosférico irreducible (ráfagas de viento del oeste).
 
 ---
 

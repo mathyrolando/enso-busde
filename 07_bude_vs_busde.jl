@@ -1,10 +1,10 @@
 ##############################################################################
-# 07_bude_vs_busde.jl  —  Comparación probabilística: BUDE vs BUSDE
+# 07_bude_vs_busde.jl  -  Comparación probabilística: BUDE vs BUSDE
 #
 # Metodología:
-#   - BUDE (UDE Bayesiana): solo incertidumbre epistémica — ensemble de M
+#   - BUDE (UDE Bayesiana): solo incertidumbre epistémica - ensemble de M
 #     muestras de la posterior q(θ) = N(μ, exp(2ρ)), corridas deterministas.
-#   - BUSDE (SDE Universal Bayesiana): epistémica + aleatoria — mismo
+#   - BUSDE (SDE Universal Bayesiana): epistémica + aleatoria - mismo
 #     muestreo de parámetros pero con ruido SDE heterocedástico ajustado
 #     por MLE en 05_sde_stochastic.jl.
 #
@@ -235,7 +235,7 @@ Hs  = 1:H_max
 axA = Axis(fig[1, 1],
     xlabel    = "Tiempo de adelanto (meses)",
     ylabel    = "CRPS (°C)",
-    title     = "Panel A — CRPS vs Tiempo de adelanto",
+    title     = "Panel A - CRPS vs Tiempo de adelanto",
     titlesize = 13)
 lines!(axA, Hs, crps_clima; color=col_clim,  linewidth=1.5, linestyle=:dash, label="Climatología")
 lines!(axA, Hs, crps_bude;  color=col_bude,  linewidth=2.2, label="BUDE (solo epistémica)")
@@ -247,7 +247,7 @@ axislegend(axA, position=:lt, labelsize=11)
 axB = Axis(fig[1, 2],
     xlabel    = "Tiempo de adelanto (meses)",
     ylabel    = "Cobertura empírica del PI al 90%",
-    title     = "Panel B — Cobertura del Intervalo de Predicción al 90%",
+    title     = "Panel B - Cobertura del Intervalo de Predicción al 90%",
     titlesize = 13)
 hlines!(axB, [0.90]; color=:black, linestyle=:dash, linewidth=1.8, label="Ideal (0.90)")
 band!(axB, Hs, fill(0.0, H_max), cov_bude;  color=(col_bude,  0.10))
@@ -262,7 +262,7 @@ axislegend(axB, position=:lb, labelsize=11)
 axC = Axis(fig[2, 1],
     xlabel    = "P(El Niño | T > 0.5 °C) pronosticada",
     ylabel    = "Frecuencia observada",
-    title     = "Panel C — Diagrama de confiabilidad a H = 6 meses\n[tam. marcador ∝ cant. muestras]",
+    title     = "Panel C - Diagrama de confiabilidad a H = 6 meses\n[tam. marcador ∝ cant. muestras]",
     titlesize = 13)
 lines!(axC, [0.0, 1.0], [0.0, 1.0]; color=:black, linestyle=:dash, linewidth=1.2, label="Perfecta")
 clim_freq = mean(T_test .> 0.5f0)
@@ -280,7 +280,7 @@ lines!(axC,  bin_centers[valid_s], rel_freqs_busde[valid_s]; color=col_busde, li
 xlims!(axC, -0.02, 1.02); ylims!(axC, -0.02, 1.05)
 axislegend(axC, position=:lt, labelsize=11)
 
-fan_title = @sprintf("Panel D — Abanico a 12 meses desde Julio 2014\n[BUDE: bandas estrechas; BUSDE: bandas físicamente realistas]")
+fan_title = @sprintf("Panel D - Abanico a 12 meses desde Julio 2014\n[BUDE: bandas estrechas; BUSDE: bandas físicamente realistas]")
 axD = Axis(fig[2, 2],
     xlabel    = "Año",
     ylabel    = "Anomalía de SST (°C)",

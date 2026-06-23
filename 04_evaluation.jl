@@ -1,5 +1,5 @@
 ##############################################################################
-# 04_evaluation.jl  —  Evaluación fuera de muestra (2011–2021)
+# 04_evaluation.jl  -  Evaluación fuera de muestra (2011–2021)
 #
 # Metodología:
 #   - Carga la distribución posterior de parámetros desde 03_ude.jl.
@@ -240,7 +240,7 @@ save("figures/04_test_rollout_bayesian.png", fig1; px_per_unit=2)
 fig2 = Figure(size=(1000, 500), fontsize=13)
 Hs = 1:H_max
 
-ax2a = Axis(fig2[1, 1], xlabel="Horizonte (meses)", ylabel="RMSE (°C)", title="Habilidad de pronóstico rodante — RMSE")
+ax2a = Axis(fig2[1, 1], xlabel="Horizonte (meses)", ylabel="RMSE (°C)", title="Habilidad de pronóstico rodante - RMSE")
 lines!(ax2a, Hs, rmse_clim_h; color=:black,      linewidth=1.5, linestyle=:dot,  label="Climatología")
 lines!(ax2a, Hs, rmse_pers_h; color=:purple,     linewidth=1.5, linestyle=:dash, label="Persistencia")
 lines!(ax2a, Hs, rmse_ols_h;  color=:gray,       linewidth=1.5, linestyle=:dash, label="OLS")
@@ -248,7 +248,7 @@ lines!(ax2a, Hs, rmse_lin_h;  color=:dodgerblue, linewidth=1.5, linestyle=:dash,
 lines!(ax2a, Hs, rmse_ude_h;  color=:darkorange, linewidth=2.0,                  label="BUDE Media")
 axislegend(ax2a, position=:lt, labelsize=11)
 
-ax2b = Axis(fig2[1, 2], xlabel="Horizonte (meses)", ylabel="Correlación", title="Habilidad de pronóstico rodante — Correlación (r)")
+ax2b = Axis(fig2[1, 2], xlabel="Horizonte (meses)", ylabel="Correlación", title="Habilidad de pronóstico rodante - Correlación (r)")
 hlines!(ax2b, [0.0]; color=:gray, linewidth=0.8, linestyle=:dot)
 lines!(ax2b, Hs, r_pers_h; color=:purple,     linewidth=1.5, linestyle=:dash, label="Persistencia")
 lines!(ax2b, Hs, r_ols_h;  color=:gray,       linewidth=1.5, linestyle=:dash, label="OLS")
@@ -262,7 +262,7 @@ save("figures/04_skill_score_bayesian.png", fig2; px_per_unit=2)
 # Figura 3: Espagueti a 6 meses
 fig3 = Figure(size=(1100, 400), fontsize=13)
 ax3 = Axis(fig3[1, 1], xlabel="Año", ylabel="Anomalía de SST (°C)",
-           title="Pronósticos rodantes a 6 meses (BUDE) — incertidumbre de parámetros")
+           title="Pronósticos rodantes a 6 meses (BUDE) - incertidumbre de parámetros")
 lines!(ax3, t_test, T_test; color=:firebrick, linewidth=2.0, label="Observado")
 
 H6 = 6

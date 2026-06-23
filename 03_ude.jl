@@ -1,5 +1,5 @@
 ##############################################################################
-# 03_ude.jl  —  ENSO Bayesian UDE (BUDE)
+# 03_ude.jl  -  ENSO Bayesian UDE (BUDE)
 #
 # Metodología:
 #   - Bayes-by-Backprop (BBB) para inferencia variacional.
@@ -308,7 +308,7 @@ t_det_years = collect(1:M_steps) .* Float64(EnsoModels.Δt_default)
 ax_det = Axis(fig_det[1, 1],
     xlabel = "Tiempo (años)",
     ylabel = "Anomalía de T (°C)",
-    title  = "Trayectoria determinista libre de la UDE — 50 años")
+    title  = "Trayectoria determinista libre de la UDE - 50 años")
 lines!(ax_det, t_det_years, T_det; color=:steelblue, linewidth=1.8)
 hlines!(ax_det,  0.5f0; color=(:firebrick, 0.7), linewidth=1.2, linestyle=:dash, label="Umbral El Niño (+0.5 °C)")
 hlines!(ax_det, -0.5f0; color=(:royalblue, 0.7), linewidth=1.2, linestyle=:dash, label="Umbral La Niña (−0.5 °C)")

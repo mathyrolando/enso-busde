@@ -1,5 +1,5 @@
 ##############################################################################
-# 08_crossval_rolling.jl  —  Validación cruzada rolling-origin (ENSO)
+# 08_crossval_rolling.jl  -  Validación cruzada rolling-origin (ENSO)
 #
 # Metodología:
 #   - Esquema rolling-origin con 5 folds en ventanas crecientes:

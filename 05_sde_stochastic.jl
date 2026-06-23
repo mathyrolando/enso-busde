@@ -1,5 +1,5 @@
 ##############################################################################
-# 05_sde_stochastic.jl  —  Ajuste de ruido de SDE y dinámica a largo plazo
+# 05_sde_stochastic.jl  -  Ajuste de ruido de SDE y dinámica a largo plazo
 #
 # Metodología:
 #   - Calcula residuos de predicción a un paso sobre los datos de entrenamiento.

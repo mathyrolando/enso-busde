@@ -1,6 +1,6 @@
 ##############################################################################
 # 02_baseline.jl
-# Proyecto ENSO — Línea de base del oscilador de recarga lineal
+# Proyecto ENSO - Línea de base del oscilador de recarga lineal
 #
 # Modelo (Jin 1997, linealizado):
 #   dT/dt = a*T + b*h
@@ -135,7 +135,7 @@ fig = CairoMakie.Figure(size=(1000, 750), fontsize=13)
 ax1 = CairoMakie.Axis(fig[1,1],
     xlabel="Año",
     ylabel="Anomalía de SST (°C)",
-    title="Oscilador de recarga lineal — SST (T)")
+    title="Oscilador de recarga lineal - SST (T)")
 lines!(ax1, t_num, T, color=:firebrick, linewidth=1.5, label="Observado")
 lines!(ax1, t_sim[1:n_plot], T_sim[1:n_plot],
     color=:dodgerblue, linewidth=1.2, linestyle=:dash, label="ODE de línea de base")
@@ -144,7 +144,7 @@ axislegend(ax1, position=:lt)
 ax2 = CairoMakie.Axis(fig[2,1],
     xlabel="Año",
     ylabel="Anomalía de WWV (10¹⁴ m³)",
-    title="Oscilador de recarga lineal — Profundidad de la termoclina (h)")
+    title="Oscilador de recarga lineal - Profundidad de la termoclina (h)")
 lines!(ax2, t_num, h, color=:steelblue, linewidth=1.5, label="Observado")
 lines!(ax2, t_sim[1:n_plot], h_sim[1:n_plot],
     color=:orange, linewidth=1.2, linestyle=:dash, label="ODE de línea de base")

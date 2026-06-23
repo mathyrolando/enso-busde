@@ -1,5 +1,5 @@
 ##############################################################################
-# 06_probabilistic_forecast.jl  —  Pronóstico probabilístico y verificación
+# 06_probabilistic_forecast.jl  -  Pronóstico probabilístico y verificación
 #
 # Metodología:
 #   - Combina incertidumbre de parámetros (posterior BUDE) e incertidumbre
@@ -210,7 +210,7 @@ fig1 = Figure(size=(1400, 900), fontsize=13)
 axA = Axis(fig1[1, 1:2],
     xlabel = "Año",
     ylabel = "Anomalía de SST (°C)",
-    title  = "SST en Niño 3.4 — Pronósticos probabilísticos rodantes a 6 meses de BUSDE (2011–2021)\n" *
+    title  = "SST en Niño 3.4 - Pronósticos probabilísticos rodantes a 6 meses de BUSDE (2011–2021)\n" *
              "Envolvente: percentiles 10–90  |  Media actualizada cada $S_plot meses")
 
 band!(axA, t_test, T_q10_rolling, T_q90_rolling; color=(:darkorange, 0.20), label="Envolvente 10–90%")

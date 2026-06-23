@@ -1,6 +1,6 @@
 ##############################################################################
 # 01_data_pipeline.jl
-# Proyecto ENSO — Adquisición y preprocesamiento de datos
+# Proyecto ENSO - Adquisición y preprocesamiento de datos
 #
 # Salidas:
 #   data/enso_dataset.csv
@@ -21,7 +21,7 @@ mkpath("data"); mkpath("figures")
 nanmean(v) = mean(filter(!isnan, v))
 
 ##############################################################################
-# 1. WWV — Anomalía del Volumen de Agua Cálida (proxy h)
+# 1. WWV - Anomalía del Volumen de Agua Cálida (proxy h)
 #    Fuente: Índice WWV de NOAA PMEL (1980–2021).
 ##############################################################################
 
@@ -64,7 +64,7 @@ h_anom       = h_anom .- h_mean_train
 @info "WWV: $(length(h_anom)) valores,  $(wwv_dates[1]) – $(wwv_dates[end])"
 
 ##############################################################################
-# 2. SST — ERSSTv5
+# 2. SST - ERSSTv5
 #    Fuente: NOAA Extended Reconstructed SST V5.
 #    Región Niño 3.4: 5°S–5°N, 170°W–120°W.
 #    Climatología de referencia: 1980–2010 (sin fuga al periodo de test).
@@ -189,7 +189,7 @@ t_num = year.(common) .+ (month.(common) .- 1) ./ 12
 fig   = Figure(size=(1000, 750), fontsize=13)
 
 ax1 = Axis(fig[1,1], xlabel="Año", ylabel="Anomalía de SST (°C)",
-           title="Anomalía de SST en Niño 3.4 — ERSSTv5 (1980–2021)")
+           title="Anomalía de SST en Niño 3.4 - ERSSTv5 (1980–2021)")
 lines!(ax1, t_num, T_aligned; color=:firebrick, linewidth=1.3)
 hlines!(ax1, [0.5]; color=:gray, linestyle=:dash)
 for pk in peaks
@@ -197,7 +197,7 @@ for pk in peaks
 end
 
 ax2 = Axis(fig[2,1], xlabel="Año", ylabel="Anomalía de WWV (10¹⁴ m³)",
-           title="Anomalía del Volumen de Agua Cálida — proxy h (PMEL)")
+           title="Anomalía del Volumen de Agua Cálida - proxy h (PMEL)")
 lines!(ax2, t_num, h_aligned; color=:steelblue, linewidth=1.3)
 hlines!(ax2, [0.0]; color=:gray, linestyle=:dash)
 
